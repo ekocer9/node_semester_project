@@ -23,3 +23,21 @@ hobbies.push("sleeping")
 me.hobbies = hobbies
 
 console.log(me)
+
+// Types in JS: number, string, boolean, object, null, undefined, symbol, bigint 
+
+// Object: object, arrays, date
+
+// type coercion
+// 2 == "2" --> true
+// 2 === "2" --> false
+
+// we ALWAYS use strict equality checks:
+// === and !==
+
+// Strings:
+
+const stringOne = ""
+const stringTwo = ''
+const stringThree = ``
+
