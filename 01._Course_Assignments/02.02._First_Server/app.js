@@ -9,7 +9,7 @@ const drinks = [
 ];
 
 app.get("/drinks", (req, res) => {
-    res.send({data: drinks.map(drinks => drinks.name)});
+    res.send({data: drinks});
 });
 
 
@@ -24,4 +24,10 @@ app.get("/drinks/:drinkId", (req, res) => {
     }
 });
 
-app.listen(8080)
+app.listen(8080, (error) => {
+    if (error) {
+        console.log("Error starting the server");
+        return;
+    }
+    console.log("Server is running on port", 8080);
+});
