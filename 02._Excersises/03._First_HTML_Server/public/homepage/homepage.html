@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <h1>Does this work!?!?!?!</h1>
 
+    <div id="celebration-box" style="color: green;">
+        <h3>Yes it does</h3>
+    </div>
+
+    <input id="name-input" placeholder="Your name here" />
+    <button onclick="showGreeting()">Get Greeting</button>
+
+    <h2 id="greeting-text"></h2>
+
+    <a href="/publicsquare">Public Square</a>
+
+<script>
+    // task make a request to /greeting and console log the greeting
+    const nameInput = document.getElementById("name-input");
+        const greetingH2 = document.getElementById("greeting-text");
+
+        function showGreeting() {
+            const name = nameInput.value;
+            fetch("/greeting?name=" + name)
+            .then((response) => response.json())
+            .then((result) => {
+                greetingH2.textContent = result.data;
+            });
+        }
+    
+
+</script>
 
 </body>
 </html>

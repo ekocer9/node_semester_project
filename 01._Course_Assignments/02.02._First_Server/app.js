@@ -23,24 +23,29 @@ app.get("/drinks/:drinkId", (req, res) => {
     }
 });
 
+const currentId = 5;
+
 app.post("/addDrinks", (req, res) => {
-    const newDrink = {
+    /*const newDrink = {
         id: drinks.length + 1,
         name: req.body.name
-    };
+    };*/
 
-    if (newDrink) {
-        drinks.push(newDrink);
-        res.send(newDrink)
-    } else {
-        res.status(404).send({ error: "Drink not Accepted" });
-    }
+    const newDrink = reg.body;
+    //newDrink.id = currentId++; //giver fejl
+    //newDrink.id = ++currentId; // en løsning
+    // currentId++; // en løsning
+    newDrink.id = nextId++;
+
+    drinks.push(newDrink);
+
+    res.send({ data: newDrink});
 });
 
 app.put("/updateDrinks/:drinkId", (req, res) => {
     const drinkId = Number(req.params.drinkId);
-    const newName = req.body.name;
     const drinkIndex = drinks.findIndex(d => d.id === drinkId);
+    const newName = req.body.name;
 
     if (drinkIndex >= 0) {
         drinks[drinkIndex].name = newName; 
