@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Time Display</title>
+<style>
+  body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  #time {
+    font-size: 48px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  #funFact {
+    margin-top: 50px;
+    font-size: 24px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+    <h1>What time is it?</h1>
+    <div id="time"></div>
+    <div id="funFact">Here's a fun time fact!</div>
+    <script>
+        const funFacts = [
+            "The concept of a 24-hour day comes from the ancient Egyptians.",
+            "The most accurate clock ever built is the strontium clock, which is accurate to within a second over 15 billion years.",
+            "A ‘jiffy’ is an actual unit of time for 1/100th of a second.",
+            "February used to be the last month of the year, which is why it has the shortest number of days.",
+            "Every second, 2-3 star systems are born somewhere in the universe."
+        ];
+
+        function updateTime() {
+            document.getElementById('time').textContent = new Date().toLocaleTimeString();
+        }
+
+        function updateFunFact() {
+            const factIndex = Math.floor(Math.random() * funFacts.length);
+            document.getElementById('funFact').textContent = funFacts[factIndex];
+        }
+
+        setInterval(updateTime, 1000);
+        setInterval(updateFunFact, 60000);
+        updateTime();
+        updateFunFact();
+    </script>
+</body>
+</html>
