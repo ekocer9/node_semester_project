@@ -2,6 +2,18 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.static("public"))
+
+//en måde at exportere
+//const helicopterFactoryFile = require("./util/helicopterFactory.js")
+//console.log(helicopterFactoryFile.helicopterFactory());
+
+
+//en måde at exportere
+const {helicopterFactory} = require("./util/helicopterFactory.js")
+console.log(helicopterFactory());
+
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/homepage/homepage.html");
 });
@@ -24,6 +36,15 @@ const knownNames = ["Enes", "Peter", "Morten"]
 app.get("/knownPeople", (req, res) => {
     res.send({data: knownNames.length})
 })
+
+app.get("/proxy", (req, res) => {
+    //asignment: Request the https://www.google.com home page and serve it as a response
+    fetch("https://www.google.com")
+    .then((response) => response.text())
+    .then((result) => res.send(result));
+})
+
+
 
 
 const PORT = 8080;

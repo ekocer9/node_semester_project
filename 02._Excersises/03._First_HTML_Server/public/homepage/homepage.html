@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <link rel="stylesheet" href="/homepage/homepage.css">
     <style>
-
+        h1 {
+            color: red;
+        }
     </style>
+    <title>Homepage</title>
 </head>
 <body>
     <h1>Does this work!?!?!?!</h1>
 
-    <div id="celebration-box" style="color: green;">
+    <!-- inline styling -->
+    <div id="celebration-box" style="color: green">
         <h3>Yes it does</h3>
     </div>
 
     <input id="name-input" placeholder="Your name here" />
     <button onclick="showGreeting()">Get Greeting</button>
-
+    
     <h2 id="greeting-text"></h2>
 
     <a href="/publicsquare">Public Square</a>
 
-<script>
-    // task make a request to /greeting and console log the greeting
-    const nameInput = document.getElementById("name-input");
+    <script>
+        const nameInput = document.getElementById("name-input");
         const greetingH2 = document.getElementById("greeting-text");
 
         function showGreeting() {
@@ -35,9 +38,7 @@
                 greetingH2.textContent = result.data;
             });
         }
-    
-
-</script>
-
+    </script>
+    <script src="/homepage/homepage.js"></script>
 </body>
 </html>
