@@ -22,6 +22,19 @@ app.get("/publicsquare", (req, res) => {
     res.sendFile(__dirname + "/public/publicSquare/publicSquare.html");
 });
 
+app.get("/treasuretrove", (req, res) => {
+    res.send({ data: "you found it!" })
+})
+
+app.get("/secretpassphrase", (req, res) => {
+    // task: Get the passphrase from the query string and compare it below
+    if(req.query.passphrase != "sesameOpenUp") {
+        res.status(400).send({ data: "Wrong passphrase"})
+    } else {
+        res.redirect("treasuretrove")
+    }
+})
+
 app.get("/greeting", (req, res) => {
     const providedName = req.params.name;
     if (knownNames.includes(providedName)) {
