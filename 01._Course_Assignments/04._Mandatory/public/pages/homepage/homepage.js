@@ -62,3 +62,19 @@ function updateStrings() {
 
 setInterval(updateStrings, 5000)
 updateStrings()
+
+// --------Functions----------
+
+const functions = [
+   "function getRandomInt(min, max) { \n    return Math.floor(Math.random() * (max + 1 - min) + min); \n}",
+   "const getRandomIntAnonymousFunction = function (min, max) { \n    return Math.floor(Math.random() * (max + 1 - min) + min); \n}",
+   "const getRandomIntArrowFunction = (min, max) => { \n    return Math.floor(Math.random() * (max + 1 - min) + min); \n}"
+]
+
+function updateFunctions() {
+    const factIndex = Math.floor(Math.random() * functions.length);
+    document.getElementById('functionsExercises').innerHTML = functions[factIndex];
+}
+
+setInterval(updateFunctions, 5000)
+updateFunctions()

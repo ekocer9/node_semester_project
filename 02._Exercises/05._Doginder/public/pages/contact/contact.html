@@ -1,1 +1,15 @@
-    <h1>Ask the dog of wisdom! </h1>
+    <form action="/api/contact" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="message">message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" aria-label="Submit Form">SEND</button>
+    </form>
