@@ -7,8 +7,7 @@
         <h3>Code Explanation</h3>
         <h4>
             JavaScript arrays are dynamic, non-primitive objects that allow mixing data types and resizing. 
-            Unlike associative arrays, their elements are accessed with nonnegative integers, 
-            following a zero-indexing system. 
+            Elements are accessed with nonnegative integers, following a zero-indexing system. 
             Operations that copy arrays produce shallow copies, 
             where the copy and the original share references to the same objects. 
             For scenarios requiring uniform data types or fixed sizes, typed arrays are recommended.
@@ -22,9 +21,7 @@
         <h3>Code Explanation</h3>
         <h4>
             Node.js fundamentals include working with variables, strings, and numbers, emphasizing variable declaration, 
-            data manipulation, and type conversion. 
-            It enables server-side JavaScript execution, merging client and server code paradigms. 
-            Understanding these basics is crucial for effective Node.js programming.
+            data manipulation, and type conversion.
         </h4>
     </div>
 
@@ -34,11 +31,11 @@
         <code id="objectExercises"></code>
         <h3>Code Explanation</h3>
         <h4>
-            Strings in programming are essential for representing text data. 
+            Strings are essential for representing text data. 
             Common operations on strings include checking their length, 
             concatenating them with + and += operators, searching for substrings using indexOf(), 
             and extracting parts of strings with substring(). 
-            These operations allow for effective string manipulation and analysis.
+            These operations allow for string manipulation and analysis.
         </h4>
     </div>
 
@@ -48,17 +45,10 @@
         <code id="stringsExercises"></code>
         <h3>Code Explanation</h3>
         <h4>
-            In JavaScript, 
-            almost all objects are instances of the Object class and inherit properties and methods from Object.prototype. 
-            This inheritance occurs unless an object has a null prototype 
+            All objects are instances of the Object class and inherit properties and methods from Object.prototype. 
+            This occurs unless an object has a null prototype 
             or is derived from another object with a null prototype. 
-            Changes to Object.prototype affect all objects through prototype chaining, 
-            unless those properties or methods are overridden. 
-            However, this mechanism, while powerful, 
-            can be risky as it allows for widespread modifications to object behavior. 
-            To mitigate such risks, Object.prototype itself has an immutable prototype; 
-            its prototype is always null and cannot be changed, 
-            ensuring a level of security and stability in the core JavaScript language.
+            Changes to Object.prototype affect all objects. 
         </h4>
     </div>
 
@@ -68,11 +58,21 @@
         <pre><code id="functionsExercises"></code></pre>
         <h3>Code Explanation</h3>
         <h4>
-            In JavaScript, functions are versatile "subprograms" that execute a sequence of statements. 
+            In JavaScript, functions are a sequence of statements. 
             They can accept values as parameters and return a value. 
-            As first-class objects, functions can be passed around, returned by other functions, 
+            Functions can be passed around, returned by other functions, 
             and assigned to variables or properties, complete with their own properties and methods.
             Their unique feature is the ability to be called, setting them apart from other objects.
+        </h4>
+    </div>
+
+    <div>
+        <h1>Asyncronous function</h1>
+        <h4>
+            The async function declaration defines an asynchronous function,
+            which allows for handling of asynchronous operations using await. 
+            This approach simplifies writing asynchronous code by avoiding complex promise chains, 
+            giving a clean syntax for managing asynchronous, promise-based behavior.
         </h4>
     </div>
 
