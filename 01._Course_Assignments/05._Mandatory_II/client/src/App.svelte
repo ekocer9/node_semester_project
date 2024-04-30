@@ -1,20 +1,12 @@
 <script>
   import Login from './components/Login.svelte';
   import Protected from './components/Protected.svelte';
-  const apiUrl = 'http://localhost:8080'; 
+  const loginUrl = 'http://localhost:8080/login';
+  const protectedUrl = 'http://localhost:8080/protected';
 </script>
 
 <main>
-  <h1>Simple Svelte Security Example</h1>
-  <Login {apiUrl} />
-  <Protected {apiUrl} />
+  <h1>Svelte Security</h1>
+  <Login apiUrl={loginUrl} />
+  <Protected apiUrl={protectedUrl} />
 </main>
-
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: auto;
-  }
-</style>

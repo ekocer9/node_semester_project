@@ -24,7 +24,7 @@
             throw new Error(error);
           }
   
-          protectedData = await response.json(); // Assume the server sends back JSON data
+          protectedData = await response.json();
         } catch (err) {
           console.error('Error fetching protected data:', err.message);
           error = err.message || 'An error occurred while fetching data';

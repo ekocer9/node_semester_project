@@ -12,14 +12,13 @@
   
     async function login() {
       try {
-        const response = await fetch(`${apiUrl}/login`, {
+        const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ username, password })
         });
-  
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.message || 'Failed to login');
@@ -62,4 +61,4 @@
     {#if errorMessage}
       <p style="color: red;">{errorMessage}</p>
     {/if}
-  </form>  
+  </form>
