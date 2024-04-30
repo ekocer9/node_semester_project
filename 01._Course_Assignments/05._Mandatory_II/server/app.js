@@ -51,10 +51,9 @@ function verifyToken(req, res, next) {
 
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 8);
-    const sql = `INSERT INTO users (username, password) VALUES (?,?)`;
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    db.run(sql, [username, hashedPassword], function(err) {
+    db.run(insert, [username, hashedPassword], function(err) {
         if (err) {
             return res.status(400).json({ error: err.message });
         }
