@@ -13,7 +13,7 @@ app.use(express.json());
 const JWT_SECRET = process.env.JWT_SECRET;
 
 function generateAccessToken(user) {
-    return jwt.sign(user, JWT_SECRET, { expiresIn: '15m' });
+    return jwt.sign(user, JWT_SECRET, { expiresIn: '5s' });
 }
 
 import cors from "cors";
@@ -50,7 +50,6 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     console.log("Received login request");
     const { username, password } = req.body;
-    console.log(username);
     try {
         const user = await db.get(selectUsers, [username]);
         if (!user) {

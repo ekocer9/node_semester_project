@@ -19,3 +19,4 @@ const insert = `INSERT INTO users (username, password, email) VALUES (?,?,?)`;
 const selectUsers = `SELECT * FROM users WHERE username = ?`;
 
 export {insert, selectUsers}
+
