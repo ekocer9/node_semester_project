@@ -8,13 +8,14 @@ if (isDeleteMode) {
 
 await db.exec(`CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT UNIQUE,
-        password TEXT
+        username VARCHAR(255) UNIQUE,
+        password VARCHAR(255),
+        email VARCHAR(255) UNIQUE
 )
 `);
 
-const insert = `INSERT INTO users (username, password) VALUES (?,?)`;
+const insert = `INSERT INTO users (username, password, email) VALUES (?,?,?)`;
 
-const [select] = `SELECT * FROM users WHERE username = ?`;
+const selectUsers = `SELECT * FROM users WHERE username = ?`;
 
-export {insert, select}
+export {insert, selectUsers}
