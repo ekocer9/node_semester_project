@@ -17,6 +17,7 @@
     "@sveltejs/adapter-auto": "^3.2.0",
     "es6": "^0.0.7",
     "mongodb": "^6.5.0",
+    "svelte-spa-router": "^4.0.1",
     "toastr": "^2.1.4"
   }
 }
